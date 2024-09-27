@@ -1,0 +1,41 @@
+pritunl con docker:
+
+primero iniciar mongodb docker:
+ docker run -d --name mongodb -p 27017:27017 mongo:latest
+
+
+el siguiente comando nos da una shell del docker pritunl:
+docker exec -it 3abe839cd4db bash
+
+si ejecutamos:
+ pritunl default-password
+[2024-09-23 22:55:08][INFO] ▶ database: Connecting to MongoDB server ◆ mongodb_hosts=[]string{"10.70.6.48:27017"}
+[2024-09-23 22:55:08][INFO] ▶ database: Connected to MongoDB server ◆ mongodb_hosts=[]string{"10.70.6.48:27017"}
+[2024-09-23 22:55:13][INFO] ▶ cmd: Get default password
+Username: pritunl
+Password: 3MqG3bLGon4g
+
+
+###################################################################
+###    esto guarda el contenedor asi funciona joya!!!!!!!    ######
+###################################################################
+
+    sudo docker run -d \
+    --name pritunl \
+    -p 80:80 \
+    -p 443:443 \
+    -p 16734:16734 \
+    -p 1194:1194/tcp \
+    -p 9700:9700/udp \
+    -p 1194:1194/udp \
+    -p 19018:19018/udp \
+    --cap-add=NET_ADMIN \
+    --cap-add=NET_RAW \
+    -e MONGO_URI="mongodb://192.168.0.107/pritunl" \
+    -e NODE_ID="5b8e11e4610f990034635e98" \
+    jippi/pritunl
+###############################################################################
+
+   
+
+
