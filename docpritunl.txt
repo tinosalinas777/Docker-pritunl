@@ -1,7 +1,7 @@
 pritunl con docker:
 
 primero iniciar mongodb docker:
- docker run -d --name mongodb -p 27017:27017 mongo:latest
+ docker run -d --name mongodb -p 27017:27017 mongo:4.4
 
 
 el siguiente comando nos da una shell del docker pritunl:
