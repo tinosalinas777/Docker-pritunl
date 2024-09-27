@@ -36,6 +36,7 @@ Password: 3MqG3bLGon4g
     jippi/pritunl
 ###############################################################################
 
+importante tener en cuenta aclarar si los puertos a utilizar van a ser tcp o udp
    
 
 
